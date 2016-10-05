@@ -63,7 +63,7 @@
     }
 
     .top h1 {
-      font-size: 72px;
+      font-size: 48px;
       padding: 0;
       margin: 0.3em;
       color: #00A9AA;
@@ -79,10 +79,6 @@
 
     .hi {
       font-size: 48px;
-    }
-
-    .foot {
-      padding: 2% 0 0;
     }
 
     .avatar {
@@ -129,7 +125,7 @@
 
     @media only screen and (max-width: 640px) {
       .top h1 {
-        font-size: 48px;
+        font-size: 42px;
         padding: 0;
       }
     }
@@ -151,6 +147,7 @@
   </p>
 </main>
 <footer class="foot" role="contentinfo">
+  <p><small>I am social, not really</small></p>
   <ul class="socl-links" role="menu">
     <li><a onclick="_track('Github')" target="_blank" title="GitHub" href="https://github.com/ankurk91"><span
       style="color:#000">G</span>itHub</a></li>
@@ -162,12 +159,12 @@
     <li><a onclick="_track('Twitter')" target="_blank" title="Twitter"
            href="https://twitter.com/ankurk91"><span
       style="color:#1da1f2">T</span>witter</a></li>
-    <li><a onclick="_track('Mail')" target="_blank" title="Mail" href="#" id="js_mail">E-<span
+    <li><a onclick="_track('Mail')" target="_blank" title="eMail" href="#" id="js_mail">E-<span
       style="color:#DC4937">M</span>ail</a></li>
   </ul>
 </footer>
 <script type="text/javascript">
-  !function (e) { var m = ".com", n = "gmail", t = "pro.ankurk1", a = t + "@" + n + m + "?subject=Hi! Ankur"; e.getElementById("js_mail").href = "mailto:" + a }(document);
+  !function (e) { var m = ".com", n = "gmail", t = "pro.ankurk1", a = t + "+github@" + n + m; e.getElementById("js_mail").href = "mailto:" + a }(document);
   function _track(val) {
     ga('send', 'event', 'Social', 'click', val)
   }
