@@ -9,7 +9,7 @@
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="noodp">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="Of2PV-HN-luNF6Q2xaqWAV469eoQ--P4NZRQoyIGqDA" />
+  <meta name="google-site-verification" content="Of2PV-HN-luNF6Q2xaqWAV469eoQ--P4NZRQoyIGqDA"/>
   <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400italic" rel="stylesheet" type="text/css" media="all">
   <style type="text/css">
     html {
@@ -62,11 +62,8 @@
       text-align: center;
     }
 
-    .top h1 {
-      font-size: 48px;
-      padding: 0;
-      margin: 0.3em;
-      color: #00A9AA;
+    .top {
+      margin: 2em 0;
     }
 
     .main {
@@ -86,23 +83,23 @@
       box-shadow: 0 0 4px rgba(0, 0, 0, .4);
     }
 
-    .socl-links {
+    .ext-links {
       list-style: none;
       padding: 0;
       margin: 0 0 15px;
     }
 
-    .socl-links li {
+    .ext-links li {
       display: inline-block;
       margin-right: 5px;
     }
 
-    .socl-links li a {
+    .ext-links li a {
       color: #a6a6a6;
       border-bottom: 1px dotted #adadad;
     }
 
-    .socl-links a:hover {
+    .ext-links a:hover {
       color: #000;
       border-bottom-style: solid;
     }
@@ -113,7 +110,7 @@
         width: 150px
       }
 
-      .socl-links li {
+      .ext-links li {
         display: block;
         margin: 5px 0 0 0;
       }
@@ -133,25 +130,28 @@
 </head>
 <body>
 <header class="top" role="banner">
-  <h1>Status : 204</h1>
   <a target="_blank" onclick="_track('Profile Pic')" href="https://github.com/ankurk91?tab=repositories">
-    <img role="banner" class="avatar" src="https://avatars0.githubusercontent.com/u/6111524?v=3&amp;s=200" height="200" width="200" alt="avatar">
+    <img role="banner" class="avatar" src="https://avatars0.githubusercontent.com/u/6111524?v=3&amp;s=200" height="200"
+         width="200" alt="avatar">
   </a>
 </header>
 <main class="main" role="main">
   <p>
     <span class="hi" role="heading">Hi!</span> <br>
-    This is Ankur Kumar.<br>
-    My internet name is <i>ankurk91</i>. <br>
+    My name is Ankur Kumar.<br>
+    Web developer from India. <br>
     I design and develop web for human.
   </p>
 </main>
 <footer class="foot" role="contentinfo">
-  <p><small>I am social, not really</small></p>
-  <ul class="socl-links" role="menu">
+  <p>
+    <small>I am social, not really</small>
+  </p>
+  <ul class="ext-links" role="menu">
     <li><a onclick="_track('Github')" target="_blank" title="GitHub" href="https://github.com/ankurk91"><span
       style="color:#000">G</span>itHub</a></li>
-    <li><a onclick="_track('WordPress')" target="_blank" title="WordPress" href="https://profiles.wordpress.org/ankurk91/#content-plugins"><span
+    <li><a onclick="_track('WordPress')" target="_blank" title="WordPress"
+           href="https://profiles.wordpress.org/ankurk91/#content-plugins"><span
       style="color:#21759B">W</span>ordPress</a></li>
     <li><a onclick="_track('LinkedIn')" target="_blank" title="LinkedIn"
            href="https://in.linkedin.com/in/ankurk91"><span
@@ -159,26 +159,41 @@
     <li><a onclick="_track('Twitter')" target="_blank" title="Twitter"
            href="https://twitter.com/ankurk91"><span
       style="color:#1da1f2">T</span>witter</a></li>
-    <li><a onclick="_track('Mail')" target="_blank" title="eMail" href="#" id="js_mail">E-<span
+    <li><a onclick="_track('Mail')" target="_blank" title="eMail" href="#" id="js_mail" data-local="1krukna.orp"
+           data-plus="+github" data-domain="gmail"
+           data-tld=".com">E-<span
       style="color:#DC4937">M</span>ail</a></li>
   </ul>
 </footer>
 <script type="text/javascript">
-  !function (e) { var m = ".com", n = "gmail", t = "pro.ankurk1", a = t + "+github@" + n + m; e.getElementById("js_mail").href = "mailto:" + a }(document);
+  !function (d) {
+    var l = d.querySelector("#js_mail");
+    var m = [l.dataset.local.split('').reverse().join('') + l.dataset.plus, l.dataset.domain + l.dataset.tld].join('@');
+    l.setAttribute('href', 'mailto:' + m);
+  }(document);
+
   function _track(val) {
-    ga('send', 'event', 'Social', 'click', val)
+    try {
+      ga('send', 'event', 'Social', 'click', val)
+    } catch (e) {
+      console.log('GA not loaded yet');
+    }
   }
-  function _loadGA() {
-    (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    var p1 = '-57008255', p2 = 'UA';
-    ga('create', {'trackingId': p2 + p1 + '-3', 'cookieDomain': 'auto', 'allowAnchor': true});
-    ga('set', 'forceSSL', true);
-    ga('require', 'displayfeatures');
-    ga('require', 'linkid');
-    ga('send', 'pageview');
-  }
-  window.addEventListener ? window.addEventListener("load", _loadGA, !1) : window.attachEvent ? window.attachEvent("onload", _loadGA) : window.onload = _loadGA;
+  // A better way to load GA
+  window.ga = function () {
+    ga.q.push(arguments)
+  };
+  ga.q = [];
+  ga.l = +new Date;
+
+  ga('create', {'trackingId': 'UA-' + '57008255' + '-3', 'cookieDomain': 'auto', 'allowAnchor': true});
+  ga('set', 'forceSSL', true);
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid');
+  ga('send', 'pageview');
+
 </script>
+<script src="https://www.google-analytics.com/analytics.js" async defer type="text/javascript"></script>
 <noscript>This website does not support non-javascript bots</noscript>
 </body>
 </html>
