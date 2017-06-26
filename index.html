@@ -3,9 +3,9 @@
 <head lang="en" dir="ltr">
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta charset="UTF-8">
-  <title>▲ Ankur Kumar | GitHub Profile</title>
+  <title>Ankur Kumar | GitHub Profile</title>
   <meta name="description" content="Ankur Kumar (ankurk91) profile on github.com">
-  <meta name="keywords" content="Ankur Kumar,ankurk91">
+  <meta name="keywords" content="Ankur Kumar, ankurk91">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="noodp">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,7 +28,7 @@
       font-weight: 400;
       line-height: normal;
       margin: 0;
-      padding: 0;
+      padding: 0 3%;
     }
 
     *, *:after, *:before {
@@ -39,7 +39,6 @@
       color: #000;
       outline: none;
       text-decoration: none;
-      transition: all 0.3s ease;
     }
 
     a:hover, a:active {
@@ -55,73 +54,44 @@
       font-weight: 400;
     }
 
-    .top, .main, .foot {
-      margin: 0 auto;
-      width: 100%;
-      text-align: center;
+    .top h1 {
+      font-size: 3em;
     }
 
-    .top {
-      margin: 2em 0;
+    .main p, .hint {
+      color: #444
     }
 
-    .main {
-      padding: 1% 0 2%;
-    }
-
-    .main p {
-      font-size: 22px;
-    }
-
-    .hi {
-      font-size: 48px;
-    }
-
-    .avatar {
-      border-radius: 50%;
-      box-shadow: 0 0 4px rgba(0, 0, 0, .4);
-    }
-
-    .ext-links {
+    .links {
       list-style: none;
       padding: 0;
-      margin: 0 0 15px;
     }
 
-    .ext-links li {
+    .links li {
       display: inline-block;
       margin-right: 5px;
     }
 
-    .ext-links li a {
-      color: #a6a6a6;
+    .links li a {
+      color: #7e7e7e;
       border-bottom: 1px dotted #adadad;
     }
 
-    .ext-links a:hover {
+    .links a:hover {
       color: #000;
       border-bottom-style: solid;
     }
 
     @media only screen and (max-width: 360px) {
-      .avatar {
-        height: 150px;
-        width: 150px
-      }
-
-      .ext-links li {
+      .links li {
         display: block;
-        margin: 5px 0 0 0;
-      }
-
-      .main p {
-        font-size: 18px;
+        margin: 10px 0 0 0;
       }
     }
 
     @media only screen and (max-width: 640px) {
       .top h1 {
-        font-size: 42px;
+        font-size: 2em;
         padding: 0;
       }
     }
@@ -129,40 +99,40 @@
 </head>
 <body>
 <header class="top" role="banner">
-  <a target="_blank" onclick="_track('Profile Pic')" href="https://github.com/ankurk91?tab=repositories">
-    <img role="banner" class="avatar" src="https://avatars0.githubusercontent.com/u/6111524?v=3&amp;s=200" height="200"
-         width="200" alt="avatar">
-  </a>
+  <h1>Ankur Kumar</h1>
 </header>
 <main class="main" role="main">
   <p>
-    <span class="hi" role="heading">Hi!</span> <br>
-    My name is Ankur Kumar.<br>
     Web developer from India. <br>
-    I design and develop web for human.
+    Find me on internet by typing @ankurk91
   </p>
 </main>
 <footer class="foot" role="contentinfo">
-  <p>
-    <small>I am social, not really</small>
-  </p>
-  <ul class="ext-links" role="menu">
+
+  <small class="hint">I am social, not really.</small>
+
+  <ul class="links" role="menu">
     <li><a onclick="_track('Github')" target="_blank" title="GitHub" href="https://github.com/ankurk91"><span
       style="color:#000">G</span>itHub</a></li>
-    <li><a onclick="_track('WordPress')" target="_blank" title="WordPress"
-           href="https://profiles.wordpress.org/ankurk91/#content-plugins"><span
-      style="color:#21759B">W</span>ordPress</a></li>
-    <li><a onclick="_track('LinkedIn')" target="_blank" title="LinkedIn"
-           href="https://in.linkedin.com/in/ankurk91"><span
-      style="color:#0077b5">L</span>inkedIn</a></li>
     <li><a onclick="_track('Twitter')" target="_blank" title="Twitter"
            href="https://twitter.com/ankurk91"><span
       style="color:#1da1f2">T</span>witter</a></li>
+    <li><a onclick="_track('LinkedIn')" target="_blank" title="LinkedIn"
+           href="https://in.linkedin.com/in/ankurk91"><span
+      style="color:#0077b5">L</span>inkedIn</a></li>
+    <li><a onclick="_track('WordPress')" target="_blank" title="WordPress"
+           href="https://profiles.wordpress.org/ankurk91/#content-plugins"><span
+      style="color:#21759B">W</span>ordPress</a></li>
+    <li><a onclick="_track('npmjs')" target="_blank" title="npm"
+           href="https://www.npmjs.com/~ankurk91"><span
+      style="color:#c12127">n</span>pm</a></li>
     <li><a onclick="_track('Mail')" target="_blank" title="eMail" href="#" id="js_mail" data-local="1krukna.orp"
            data-plus="+github" data-domain="gmail"
            data-tld=".com">E-<span
       style="color:#DC4937">M</span>ail</a></li>
   </ul>
+
+  <small class="hint">No personal support over emails please. :)</small>
 </footer>
 <script type="text/javascript">
   !function (d) {
@@ -193,7 +163,7 @@
 
 </script>
 <script src="https://www.google-analytics.com/analytics.js" async defer type="text/javascript"></script>
-<noscript>This website does not support non-javascript bots</noscript>
+<noscript><p>This website does not support non-javascript bots</p></noscript>
 </body>
 </html>
 <!-- Anything interesting here ? -->
