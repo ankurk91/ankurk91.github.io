@@ -143,9 +143,9 @@
     l.setAttribute('href', 'mailto:' + m);
   }(document);
 
-  function _track(val) {
+  function _track(label) {
     try {
-      ga('send', 'event', 'Social', 'click', val)
+      ga('send', 'event', 'Social', 'click', label, 1)
     } catch (e) {
       console.log('GA not loaded yet');
     }
