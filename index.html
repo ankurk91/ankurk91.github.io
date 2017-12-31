@@ -120,16 +120,14 @@
       style="color:#1da1f2">T</span>witter</a></li>
     <li><a onclick="_track('LinkedIn')" target="_blank" rel="noopener" title="LinkedIn"
            href="https://in.linkedin.com/in/ankurk91"><span
-      style="color:#0077b5">L</span>inkedIn</a></li>
-    <li><a onclick="_track('WordPress')" target="_blank" rel="noopener" title="WordPress"
-           href="https://profiles.wordpress.org/ankurk91/#content-plugins"><span
-      style="color:#21759B">W</span>ordPress</a></li>
+      style="color:#0077b5">L</span>inkedIn</a></li>    
     <li><a onclick="_track('npmjs')" target="_blank" rel="noopener" title="npm"
            href="https://www.npmjs.com/~ankurk91"><span
       style="color:#c12127">n</span>pm</a></li>
     <li><a onclick="_track('Mail')" target="_blank" rel="noopener" title="eMail" href="#" id="js_mail"
            data-local="1krukna.orp"
-           data-plus="+github" data-domain="gmail"
+           data-plus="+github" 
+           data-domain="gmail"
            data-tld=".com">E-<span
       style="color:#DC4937">M</span>ail</a></li>
   </ul>
@@ -147,7 +145,7 @@
     try {
       ga('send', 'event', 'Social', 'click', label, 1)
     } catch (e) {
-      console.log('GA not loaded yet');
+      console.log('GA not loaded yet', e);
     }
   }
   // A better way to load GA
@@ -159,13 +157,14 @@
 
   ga('create', {'trackingId': 'UA-' + '57008255' + '-3', 'cookieDomain': 'auto', 'allowAnchor': true});
   ga('set', 'forceSSL', true);
+  ga('set', 'transport', 'beacon');
   ga('require', 'displayfeatures');
   ga('require', 'linkid');
   ga('send', 'pageview');
 
 </script>
 <script src="https://www.google-analytics.com/analytics.js" async defer type="text/javascript"></script>
-<noscript><p>This website does not support non-javascript bots</p></noscript>
+<noscript><p>This website does not support non-javascript bots.</p></noscript>
 </body>
 </html>
 <!-- Anything interesting here ? -->
