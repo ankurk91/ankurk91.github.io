@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head lang="en" dir="ltr">
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta charset="UTF-8">
   <title>Ankur Kumar | GitHub Profile</title>
   <meta name="description" content="Ankur Kumar (ankurk91) profile on github.com">
-  <meta name="keywords" content="Ankur Kumar, ankurk91">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="noodp">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="Of2PV-HN-luNF6Q2xaqWAV469eoQ--P4NZRQoyIGqDA"/>
-  <style type="text/css">
+  <style>
     html {
       font-size: 100%;
       height: 100%;
@@ -112,21 +110,21 @@
   <small class="hint">I am social, not really.</small>
 
   <ul class="links" role="menu">
-    <li><a onclick="_track('Github')" target="_blank" rel="noopener" title="GitHub"
+    <li><a target="_blank" rel="noopener" title="GitHub"
            href="https://github.com/ankurk91"><span
       style="color:#000">G</span>itHub</a></li>
-    <li><a onclick="_track('Twitter')" target="_blank" rel="noopener" title="Twitter"
+    <li><a target="_blank" rel="noopener" title="Twitter"
            href="https://twitter.com/ankurk91"><span
       style="color:#1da1f2">T</span>witter</a></li>
-    <li><a onclick="_track('LinkedIn')" target="_blank" rel="noopener" title="LinkedIn"
+    <li><a target="_blank" rel="noopener" title="LinkedIn"
            href="https://in.linkedin.com/in/ankurk91"><span
-      style="color:#0077b5">L</span>inkedIn</a></li>    
-    <li><a onclick="_track('npmjs')" target="_blank" rel="noopener" title="npm"
+      style="color:#0077b5">L</span>inkedIn</a></li>
+    <li><a target="_blank" rel="noopener" title="npm"
            href="https://www.npmjs.com/~ankurk91"><span
       style="color:#c12127">n</span>pm</a></li>
-    <li><a onclick="_track('Mail')" target="_blank" rel="noopener" title="eMail" href="#" id="js_mail"
+    <li><a target="_blank" rel="noopener" title="eMail" href="#" id="jsMail"
            data-local="1krukna.orp"
-           data-plus="+github" 
+           data-plus="+github"
            data-domain="gmail"
            data-tld=".com">E-<span
       style="color:#DC4937">M</span>ail</a></li>
@@ -134,36 +132,13 @@
 
   <small class="hint">No personal support over emails please. :)</small>
 </footer>
-<script type="text/javascript">
+<script>
   !function (d) {
-    var l = d.querySelector("#js_mail");
+    var l = d.querySelector("#jsMail");
     var m = [l.dataset.local.split('').reverse().join('') + l.dataset.plus, l.dataset.domain + l.dataset.tld].join('@');
     l.setAttribute('href', 'mailto:' + m);
   }(document);
-
-  function _track(label) {
-    try {
-      ga('send', 'event', 'Social', 'click', label, 1)
-    } catch (e) {
-      console.log('GA not loaded yet', e);
-    }
-  }
-  // A better way to load GA
-  window.ga = function () {
-    ga.q.push(arguments)
-  };
-  ga.q = [];
-  ga.l = +new Date;
-
-  ga('create', {'trackingId': 'UA-' + '57008255' + '-3', 'cookieDomain': 'auto', 'allowAnchor': true});
-  ga('set', 'forceSSL', true);
-  ga('set', 'transport', 'beacon');
-  ga('require', 'displayfeatures');
-  ga('require', 'linkid');
-  ga('send', 'pageview');
-
 </script>
-<script src="https://www.google-analytics.com/analytics.js" async defer type="text/javascript"></script>
 <noscript><p>This website does not support non-javascript bots.</p></noscript>
 </body>
 </html>
