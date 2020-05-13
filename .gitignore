@@ -1,11 +1,8 @@
-# https://github.com/github/gitignore
 # http://git-scm.com/docs/gitignore
 
 # phpstorm, webstorm
 .idea/
-
-
-# sublime and other ide
+.vsscode/
 .project
 *.sublime-project
 *.sublime-workspace
@@ -39,17 +36,9 @@ $RECYCLE.BIN/
 *.DS_Store
 .DS_Store?
 
-
 # node packages
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules/
-
-
-# bower packages
-bower_components/
-
-# svn folders
-.svn/
 
 # composer
 /vendor/
