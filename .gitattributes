@@ -18,6 +18,5 @@
 
 # Export ignore
 LICENSE.txt export-ignore
-.travis.yml export-ignore
 tests export-ignore
 .github export-ignore
