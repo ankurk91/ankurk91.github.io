@@ -4,9 +4,7 @@
 .idea/
 .vsscode/
 .project
-*.sublime-project
-*.sublime-workspace
-.brackets.json
+*.sublime-*
 
 # logs and cache
 logs/
