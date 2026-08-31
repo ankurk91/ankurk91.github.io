@@ -9,152 +9,233 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="Of2PV-HN-luNF6Q2xaqWAV469eoQ--P4NZRQoyIGqDA"/>
   <style>
-    html {
-      font-size: 100%;
-      height: 100%;
-      overflow-y: scroll;
-      vertical-align: baseline;
-      -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-      -webkit-font-smoothing: antialiased;
+    :root {
+      /* Dark mode follows the OS, no JS, no invert() hack */
+      color-scheme: light dark;
+
+      --bg: light-dark(#ffffff, #0d1117);
+      --fg: light-dark(#1f2328, #e6edf3);
+      --muted: light-dark(#59636e, #9198a1);
+      --syntax: light-dark(#b6bec7, #4d5560);
+      --border: light-dark(#d1d9e0, #30363d);
+      --link: light-dark(#0969da, #4493f8);
+      --code-bg: light-dark(#eff1f3, #2b3138);
+      --mark: light-dark(#fff3c4, #4a3f14);
+
+      --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
+      --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+      "Liberation Mono", monospace;
     }
 
-    body {
-      color: #222;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-      font-size: 16px;
-      font-weight: 400;
-      height: 100%;
-      line-height: normal;
-      margin: 0;
-      text-align: center;
-    }
-
-    .wrapper {
-      background-color: #f8f8f8;
-      padding: 3% 0;
-      height: 100%;
-    }
-
-    *, *:after, *:before {
+    *, *::before, *::after {
       box-sizing: border-box;
     }
 
-    a, a:visited {
-      color: #000;
-      outline: none;
-      text-decoration: none;
+    html {
+      -webkit-text-size-adjust: 100%;
+      scrollbar-gutter: stable;
     }
 
-    a:hover, a:active {
-      outline: none;
-      text-decoration: none;
-    }
-
-    a:focus {
-      outline: thin dotted;
-    }
-
-    h1, h2, h3 {
-      font-weight: 400;
-    }
-
-    .main p {
-      font-size: 1.2em;
-    }
-
-    .top h1 {
-      font-size: 3em;
-    }
-
-    .top h2 {
+    body {
       margin: 0;
+      background-color: var(--bg);
+      color: var(--fg);
+      font: 400 1rem/1.65 var(--sans);
+      text-align: left;
     }
 
-    .foot {
-      padding: 1em 0;
+    ::selection {
+      background-color: var(--mark);
     }
 
-    .links {
-      list-style: none;
-      padding: 0;
+    .page {
+      max-inline-size: 46rem;
+      margin: 0;
+      padding-block: clamp(2rem, 7vw, 4rem);
+      padding-inline: clamp(2.75rem, 8vw, 4rem) clamp(1.25rem, 5vw, 2rem);
     }
 
-    .links li {
-      display: inline-block;
-      margin-right: 5px;
+    /* Markdown source markers live in the left gutter */
+    :where(h1, h2, li, blockquote)::before {
+      position: absolute;
+      inset-inline-end: 100%;
+      padding-inline-end: 0.5em;
+      color: var(--syntax);
+      font: 400 0.9em/inherit var(--mono);
+      user-select: none;
     }
 
-    .links li a {
-      color: #525050;
-      border-bottom: 1px dotted #adadad;
-    }
-
-    .links a:hover {
-      color: #000;
-      border-bottom-style: solid;
-    }
-
-    @media only screen and (max-width: 360px) {
-      .links li {
-        display: block;
-        margin: 10px 0 0 0;
+    .md {
+      h1, h2, p, ul, blockquote, hr {
+        margin-block: 0 1rem;
       }
-    }
 
-    @media only screen and (max-width: 640px) {
-      .top h1 {
-        font-size: 2em;
+      h1, h2 {
+        position: relative;
+        margin-block-start: 1.75rem;
+        font-weight: 600;
+        line-height: 1.25;
+        text-wrap: balance;
+
+        &:first-child {
+          margin-block-start: 0;
+        }
+      }
+
+      h1 {
+        font-size: clamp(1.9rem, 5vw, 2.4rem);
+        padding-block-end: 0.3em;
+        border-block-end: 1px solid var(--border);
+
+        &::before {
+          content: "#";
+        }
+      }
+
+      h2 {
+        font-size: clamp(1.2rem, 3.5vw, 1.4rem);
+        color: var(--muted);
+
+        &::before {
+          content: "##";
+        }
+      }
+
+      p {
+        text-wrap: pretty;
+      }
+
+      hr {
+        block-size: 1px;
+        margin-block: 2rem;
+        border: 0;
+        background-color: var(--border);
+      }
+
+      code {
+        padding: 0.15em 0.4em;
+        border-radius: 6px;
+        background-color: var(--code-bg);
+        font-family: var(--mono);
+        font-size: 0.875em;
+      }
+
+      ul {
         padding: 0;
+        list-style: none;
+      }
+
+      li {
+        position: relative;
+        margin-block-end: 0.35rem;
+
+        &::before {
+          content: "-";
+        }
+      }
+
+      blockquote {
+        position: relative;
+        margin-inline: 0;
+        padding-inline-start: 1rem;
+        border-inline-start: 0.25rem solid var(--border);
+        color: var(--muted);
+        font-size: 0.9375rem;
+
+        &::before {
+          content: ">";
+        }
+      }
+
+      a {
+        color: var(--link);
+        text-decoration: none;
+
+        &:hover, &:active {
+          text-decoration: underline;
+          text-underline-offset: 0.15em;
+        }
+
+        &:focus-visible {
+          outline: 2px solid var(--link);
+          outline-offset: 3px;
+          border-radius: 3px;
+        }
       }
     }
 
-    @media (prefers-color-scheme: dark) {
-      html {
-        filter: invert(1) hue-rotate(180deg);
-      }
+    .brand {
+      color: var(--brand, currentColor);
+      font-weight: 600;
+    }
+
+    .b-github {
+      --brand: light-dark(#24292f, #e6edf3);
+    }
+
+    .b-twitter {
+      --brand: #1da1f2;
+    }
+
+    .b-npm {
+      --brand: #c12127;
+    }
+
+    .b-dev {
+      --brand: light-dark(#24292f, #e6edf3);
+    }
+
+    .b-mail {
+      --brand: #dc4937;
     }
   </style>
 </head>
 <body>
-<div class="wrapper">
-  <header class="top" role="banner">
-    <h1>Hello.</h2>
-    <h2>My name is Ankur</h1>
-  </header>
-  <main class="main" role="main">
-    <p>
-      I am a Cloud Platform Engineer from India. <br>
-      Find me on internet by typing <code>@ankurk91</code>
-    </p>
-  </main>
-  <footer class="foot" role="contentinfo">
+<div class="page">
+  <article class="md">
+    <header role="banner">
+      <h1>Hello.</h1>
+      <h2>My name is Ankur</h2>
+    </header>
 
-    <span class="hint">I am social, not really.</span>
+    <main role="main">
+      <p>
+        I am a Cloud Platform Engineer from India. <br>
+        Find me on internet by typing <code>@ankurk91</code>
+      </p>
+    </main>
 
-    <ul class="links" role="menu">
-      <li><a target="_blank" rel="noopener" title="GitHub"
-             href="https://github.com/ankurk91"><span
-        style="color:#000">G</span>itHub</a></li>
-      <li><a target="_blank" rel="noopener" title="Twitter"
-             href="https://twitter.com/ankurk91"><span
-        style="color:#1da1f2">T</span>witter</a></li>
-      <li><a target="_blank" rel="noopener" title="npm"
-             href="https://www.npmjs.com/~ankurk91"><span
-        style="color:#c12127">n</span>pm</a></li>
-      <li><a target="_blank" rel="noopener" title="dev.to"
-             href="https://dev.to/ankurk91"><span
-        style="color:#000">D</span>EV</a></li>
-      <li><a target="_blank" rel="noopener" title="eMail" href="#" id="jsMail"
-             data-local="1krukna.orp"
-             data-plus="+github"
-             data-domain="gmail"
-             data-tld=".com">E-<span
-        style="color:#DC4937">M</span>ail</a></li>
-    </ul>
+    <hr>
 
-    <small class="hint">No personal support over emails/twitter please. :)</small>
-  </footer>
+    <footer role="contentinfo">
+      <h2>I am social, not really.</h2>
+
+      <ul class="links" role="menu">
+        <li><a target="_blank" rel="noopener" title="GitHub"
+               href="https://github.com/ankurk91"><span
+          class="brand b-github">G</span>itHub</a></li>
+        <li><a target="_blank" rel="noopener" title="Twitter"
+               href="https://twitter.com/ankurk91"><span
+          class="brand b-twitter">T</span>witter</a></li>
+        <li><a target="_blank" rel="noopener" title="npm"
+               href="https://www.npmjs.com/~ankurk91"><span
+          class="brand b-npm">n</span>pm</a></li>
+        <li><a target="_blank" rel="noopener" title="dev.to"
+               href="https://dev.to/ankurk91"><span
+          class="brand b-dev">D</span>EV</a></li>
+        <li><a target="_blank" rel="noopener" title="eMail" href="#" id="jsMail"
+               data-local="1krukna.orp"
+               data-plus="+github"
+               data-domain="gmail"
+               data-tld=".com">E-<span
+          class="brand b-mail">M</span>ail</a></li>
+      </ul>
+
+      <blockquote>No personal support over emails/twitter please. :)</blockquote>
+    </footer>
+  </article>
 </div>
 <script>
   !function (d) {

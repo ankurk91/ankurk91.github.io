@@ -1,13 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta charset="UTF-8">
   <title>404 | Page not found</title>
   <meta name="description" content="">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noodp">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      color-scheme: light dark;
+
+      --bg: light-dark(#ffffff, #0d1117);
+      --fg: light-dark(#1f2328, #e6edf3);
+      --muted: light-dark(#59636e, #9198a1);
+      --syntax: light-dark(#b6bec7, #4d5560);
+      --border: light-dark(#d1d9e0, #30363d);
+
+      --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+      "Liberation Mono", monospace;
+    }
+
+    body {
+      margin: 0;
+      padding-block: clamp(2rem, 7vw, 4rem);
+      padding-inline: clamp(2.75rem, 8vw, 4rem) clamp(1.25rem, 5vw, 2rem);
+      max-inline-size: 46rem;
+      background-color: var(--bg);
+      color: var(--fg);
+      font: 400 1rem/1.65 var(--sans);
+      text-align: left;
+    }
+
+    h1 {
+      position: relative;
+      margin-block: 0 1rem;
+      padding-block-end: 0.3em;
+      border-block-end: 1px solid var(--border);
+      font-size: clamp(1.5rem, 5vw, 2.4rem);
+      font-weight: 600;
+      line-height: 1.25;
+
+      &::before {
+        content: "#";
+        position: absolute;
+        inset-inline-end: 100%;
+        padding-inline-end: 0.5em;
+        color: var(--syntax);
+        font: 400 0.9em/inherit var(--mono);
+        user-select: none;
+      }
+    }
+
+    small {
+      color: var(--muted);
+    }
+  </style>
 </head>
 <body>
 <h1>404 | Page not found</h1>
