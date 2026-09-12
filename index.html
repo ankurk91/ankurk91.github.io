@@ -3,11 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>Ankur | GitHub Profile</title>
-  <meta name="description" content="Ankur Kumar (ankurk91) profile on github.com">
+  <meta name="description"
+        content="Ankur Kumar (ankurk91) - Cloud Platform Engineer from India. Find me on GitHub, npm, DEV and Twitter.">
   <meta name="robots" content="index, follow">
-  <meta name="googlebot" content="noodp">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="Of2PV-HN-luNF6Q2xaqWAV469eoQ--P4NZRQoyIGqDA"/>
+  <meta name="google-site-verification" content="Of2PV-HN-luNF6Q2xaqWAV469eoQ--P4NZRQoyIGqDA">
+  <link rel="canonical" href="https://ankurk91.github.io/">
+
+  <!-- Open Graph, image is the GitHub avatar (460x460) -->
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="ankurk91">
+  <meta property="og:url" content="https://ankurk91.github.io/">
+  <meta property="og:title" content="Ankur | GitHub Profile">
+  <meta property="og:description"
+        content="Ankur Kumar (ankurk91) - Cloud Platform Engineer from India. Find me on GitHub, npm, DEV and Twitter.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/6111524?v=4">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="460">
+  <meta property="og:image:height" content="460">
+  <meta property="og:image:alt" content="Ankur Kumar's avatar">
+  <meta property="profile:username" content="ankurk91">
+
+  <!-- Twitter reads the og:* tags above for title, description and image -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@ankurk91">
+  <meta name="twitter:creator" content="@ankurk91">
   <style>
     :root {
       /* Dark mode follows the OS, no JS, no invert() hack */
@@ -22,11 +42,8 @@
       --code-bg: light-dark(#eff1f3, #2b3138);
       --mark: light-dark(#fff3c4, #4a3f14);
 
-      --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-      "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-      "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
       --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
-      "Liberation Mono", monospace;
+      "Liberation Mono", "Noto Sans Mono", monospace;
     }
 
     *, *::before, *::after {
@@ -42,7 +59,8 @@
       margin: 0;
       background-color: var(--bg);
       color: var(--fg);
-      font: 400 1rem/1.65 var(--sans);
+      font: 400 1rem/1.65 var(--mono);
+      font-variant-ligatures: none;
       text-align: left;
     }
 
@@ -63,7 +81,7 @@
       inset-inline-end: 100%;
       padding-inline-end: 0.5em;
       color: var(--syntax);
-      font: 400 0.9em/inherit var(--mono);
+      font-weight: 400;
       user-select: none;
     }
 
@@ -85,7 +103,7 @@
       }
 
       h1 {
-        font-size: clamp(1.9rem, 5vw, 2.4rem);
+        font-size: clamp(1.75rem, 5vw, 2.2rem);
         padding-block-end: 0.3em;
         border-block-end: 1px solid var(--border);
 
@@ -95,7 +113,7 @@
       }
 
       h2 {
-        font-size: clamp(1.2rem, 3.5vw, 1.4rem);
+        font-size: clamp(1.1rem, 3.5vw, 1.3rem);
         color: var(--muted);
 
         &::before {
@@ -118,8 +136,6 @@
         padding: 0.15em 0.4em;
         border-radius: 6px;
         background-color: var(--code-bg);
-        font-family: var(--mono);
-        font-size: 0.875em;
       }
 
       ul {
@@ -165,31 +181,6 @@
         }
       }
     }
-
-    .brand {
-      color: var(--brand, currentColor);
-      font-weight: 600;
-    }
-
-    .b-github {
-      --brand: light-dark(#24292f, #e6edf3);
-    }
-
-    .b-twitter {
-      --brand: #1da1f2;
-    }
-
-    .b-npm {
-      --brand: #c12127;
-    }
-
-    .b-dev {
-      --brand: light-dark(#24292f, #e6edf3);
-    }
-
-    .b-mail {
-      --brand: #dc4937;
-    }
   </style>
 </head>
 <body>
@@ -203,7 +194,7 @@
     <main role="main">
       <p>
         I am a Cloud Platform Engineer from India. <br>
-        Find me on internet by typing <code>@ankurk91</code>
+        Everywhere that matters, I am <code>@ankurk91</code>
       </p>
     </main>
 
@@ -212,25 +203,16 @@
     <footer role="contentinfo">
       <h2>I am social, not really.</h2>
 
-      <ul class="links" role="menu">
-        <li><a target="_blank" rel="noopener" title="GitHub"
-               href="https://github.com/ankurk91"><span
-          class="brand b-github">G</span>itHub</a></li>
-        <li><a target="_blank" rel="noopener" title="Twitter"
-               href="https://twitter.com/ankurk91"><span
-          class="brand b-twitter">T</span>witter</a></li>
-        <li><a target="_blank" rel="noopener" title="npm"
-               href="https://www.npmjs.com/~ankurk91"><span
-          class="brand b-npm">n</span>pm</a></li>
-        <li><a target="_blank" rel="noopener" title="dev.to"
-               href="https://dev.to/ankurk91"><span
-          class="brand b-dev">D</span>EV</a></li>
-        <li><a target="_blank" rel="noopener" title="eMail" href="#" id="jsMail"
+      <ul class="links">
+        <li><a target="_blank" rel="noopener" title="GitHub" href="https://github.com/ankurk91">GitHub</a></li>
+        <li><a target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/ankurk91">Twitter</a></li>
+        <li><a target="_blank" rel="noopener" title="npm" href="https://www.npmjs.com/~ankurk91">npm</a></li>
+        <li><a target="_blank" rel="noopener" title="dev.to" href="https://dev.to/ankurk91">DEV</a></li>
+        <li><a href="#" id="jsMail" title="eMail"
                data-local="1krukna.orp"
                data-plus="+github"
                data-domain="gmail"
-               data-tld=".com">E-<span
-          class="brand b-mail">M</span>ail</a></li>
+               data-tld=".com">E-Mail</a></li>
       </ul>
 
       <blockquote>No personal support over emails/twitter please. :)</blockquote>
@@ -238,13 +220,34 @@
   </article>
 </div>
 <script>
-  !function (d) {
-    let l = d.querySelector("#jsMail");
-    let m = [l.dataset.local.split('').reverse().join('') + l.dataset.plus, l.dataset.domain + l.dataset.tld].join('@');
-    l.setAttribute('href', 'mailto:' + m);
-  }(document);
+  {
+    const link = document.querySelector('#jsMail');
+    const {local, plus, domain, tld} = link.dataset;
+    link.href = `mailto:${[...local].reverse().join('')}${plus}@${domain}${tld}`;
+  }
 </script>
 <noscript><p>This website does not support non-javascript bots :p</p></noscript>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ankur Kumar",
+    "alternateName": "ankurk91",
+    "jobTitle": "Cloud Platform Engineer",
+    "url": "https://ankurk91.github.io/",
+    "image": "https://avatars.githubusercontent.com/u/6111524?v=4",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://github.com/ankurk91",
+      "https://twitter.com/ankurk91",
+      "https://www.npmjs.com/~ankurk91",
+      "https://dev.to/ankurk91"
+    ]
+  }
+</script>
 </body>
 </html>
 <!-- Anything interesting here ? -->

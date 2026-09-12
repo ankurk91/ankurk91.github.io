@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>404 | Page not found</title>
-  <meta name="description" content="">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noodp">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,10 +16,8 @@
       --syntax: light-dark(#b6bec7, #4d5560);
       --border: light-dark(#d1d9e0, #30363d);
 
-      --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-      "Helvetica Neue", Arial, "Noto Sans", sans-serif;
       --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
-      "Liberation Mono", monospace;
+      "Liberation Mono", "Noto Sans Mono", monospace;
     }
 
     body {
@@ -30,7 +27,8 @@
       max-inline-size: 46rem;
       background-color: var(--bg);
       color: var(--fg);
-      font: 400 1rem/1.65 var(--sans);
+      font: 400 1rem/1.65 var(--mono);
+      font-variant-ligatures: none;
       text-align: left;
     }
 
@@ -49,7 +47,7 @@
         inset-inline-end: 100%;
         padding-inline-end: 0.5em;
         color: var(--syntax);
-        font: 400 0.9em/inherit var(--mono);
+        font-weight: 400;
         user-select: none;
       }
     }
@@ -64,9 +62,7 @@
 <small>You are being redirected ...</small>
 
 <script>
-  setTimeout(function () {
-    window.location.replace('https://ankurk91.github.io');
-  }, 5000);
+  setTimeout(() => window.location.replace('https://ankurk91.github.io'), 5000);
 </script>
 </body>
 </html>

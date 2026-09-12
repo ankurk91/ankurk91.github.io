@@ -1,42 +1,24 @@
-# http://git-scm.com/docs/gitignore
+# https://git-scm.com/docs/gitignore
 
-# phpstorm, webstorm
+# Editors and IDEs
 .idea/
 .vscode/
-
-# logs and cache
-logs/
-*.log
-npm-debug.log*
-.sass-cache
-.cache
+*.code-workspace
 
 # OS generated files
-[Tt]humbs.db
-ehthumbs.db
-*~
-.*~
-._*
-*.bak
+.DS_Store
+Thumbs.db
+desktop.ini
 
-# Recycle bin folder used by different os
-.Trash-*
-$RECYCLE.BIN/
+# Logs and caches
+*.log
+.cache/
 
-# Windows shortcuts
-*.lnk
-
-# Folder config file
-[Dd]esktop.ini
-*.DS_Store
-.DS_Store?
-
-# 3rd party
+# Dependencies
 node_modules/
-/vendor/
-composer.phar
 
-# Security tokens
+# Environment and secrets
+.env
+.env.*
 *.pem
-*.pub
-*.crt
+*.key

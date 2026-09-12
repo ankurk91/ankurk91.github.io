@@ -1,22 +1,17 @@
-# https://git-scm.com/book/en/Customizing-Git-Git-Attributes
+# https://git-scm.com/docs/gitattributes
 
-# Auto detect text files and perform LF normalization
-* text=auto
+# Detect text files and normalize line endings to LF, on commit and checkout
+* text=auto eol=lf
 
-# Don't diff or textually merge source maps
-*.map   binary
-
-# Avoid unreadable diffs for generated text files, eg: *.min.js
-*.min.* binary
-
-# Image files
+# Binary assets, never diff or attempt to merge
+*.ico   binary
+*.png   binary
 *.jpg   binary
 *.jpeg  binary
-*.png   binary
 *.gif   binary
-*.ico   binary
+*.webp  binary
+*.woff  binary
+*.woff2 binary
 
-# Export ignore
-LICENSE.txt export-ignore
-tests export-ignore
-.github export-ignore
+# SVG is XML, keep it diffable
+*.svg   text
